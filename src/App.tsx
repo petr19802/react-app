@@ -1,10 +1,17 @@
-import { useState } from 'react'
+import {useEffect, useState} from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [list, setList] = useState([])
+
+  useEffect(()=>{
+fetch('/api/list').then(res=>res.json()).then((res)=>{
+  setList(res)
+})
+  },[])
 
   return (
     <>
@@ -24,6 +31,7 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
+        {list.map((item, index) => (<div key={index}>{item}</div>))}
         <div style={{color:'red'}}>My first Docker Image</div>
       </div>
       <p className="read-the-docs">
