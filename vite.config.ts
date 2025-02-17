@@ -5,13 +5,13 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    proxy: {
-      '/api': {
-        target: 'http://localhost:5432', // Бэкенд NestJS
-        changeOrigin: true,
-        secure: false,
-      },
-    },
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://91.103.252.147:5432', // Бэкенд NestJS
+    //     changeOrigin: true,
+    //     secure: false,
+    //   },
+    // },
     port: 3000, // Здесь указываем нужный порт
     watch:{
       usePolling:true

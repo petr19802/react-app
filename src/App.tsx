@@ -8,7 +8,7 @@ function App() {
   const [list, setList] = useState([])
 
   useEffect(()=>{
-fetch('/api/list').then(res=>res.json()).then((res)=>{
+fetch('http://91.103.252.147:5432/api/list').then(res=>res.json()).then((res)=>{
   setList(res)
 })
   },[])
