@@ -1,0 +1,15 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    port: 3000, // Здесь указываем нужный порт
+    watch:{
+      usePolling:true
+    },
+    host:true,
+    strictPort:true
+  }
+})
